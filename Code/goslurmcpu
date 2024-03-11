@@ -1,0 +1,18 @@
+#!/bin/bash -l
+#
+#SBATCH --job-name=COSC3500_Project
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=4
+#SBATCH --time=0-00:15:00
+module load compiler-rt/latest
+module add mkl/latest
+module add mpi/openmpi-x86_64
+
+export PATH=/usr/lib64/openmpi/bin:$PATH
+
+make clean
+make all
+
+mpiexec -n 1 -map-by node -bind-to none ./cpuInfection.exe
