@@ -22,6 +22,7 @@ Implementation of these including the consideration of
   * Interconnectedness (at the end of each tick in the world, all threads on all nodes needed to communicate at a master node and process information before diverging workload to the different nodes and threads again)
 
 Data was processed and written into a .txt file, which was read and processed in Python to create an animation of the simulation.
+
 ![](https://github.com/TrazZed/Parallel-Virus-Spread/blob/main/animation.gif)
 
 Overall performance of each implementation relative to each other:
